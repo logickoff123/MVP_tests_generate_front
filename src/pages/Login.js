@@ -8,7 +8,11 @@ const Login = () => {
     <div className ={styles.login}>
       <img src = {fon} alt = 'error' className={styles.fon}/>
       <div className = {styles.block}>
-        
+        <p className = {styles.vhod}>Вход</p>
+        <div className = {styles.block1}>
+            <input type = "email" placeholder="Email" className={styles.email}/>
+            <input type = "password" placeholder="Password" className={styles.password}/>
+        </div>
       </div>
     </div>
   );
