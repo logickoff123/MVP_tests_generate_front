@@ -1,8 +1,41 @@
 .baner {
     background-color: #1C1C1D;
-    height: 1000px; 
+    height: 800px; 
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../Roboto/Roboto-Black.ttf') format('truetype');
+    /*src: url('../../Roboto/Roboto-Thin.ttf') format('truetype');*/
+    font-weight: normal;
+    font-style: normal;
 }
 .white{
-    color: #FFFF;
-    
+    color: white;
+    font-size: 64px;
+    font-family: 'Roboto';
+
+}
+.green{
+    color:#C1EF00;
+    font-size: 64px;
+    font-family: 'Roboto';
+}
+
+.textbox {
+    position: absolute; /* Добавлено */
+    top: 190px; /* Отступ сверху, измените по необходимости */
+    left: 60px; /* Отступ слева, измените по необходимости */
+    margin-bottom: 10px;
+    line-height: 0.5;
+}
+.grey{
+    color:grey;
+}
+
+.begin{
+    background-color: #C1EF00;
+    width: 150px;
+    height: 54px;
+    border-radius: 12px;
+    font-family: 'Roboto';
 }
