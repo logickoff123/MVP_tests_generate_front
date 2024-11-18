@@ -10,7 +10,6 @@ function App() {
       <div className={styles.wrapper}>
         <Header />
         <Main />
-
       </div>
     </>
   );
