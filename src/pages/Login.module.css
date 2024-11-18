@@ -1,0 +1,14 @@
+.fon{
+    width: 100%;
+    height: 100%;
+}
+.block{
+    position: relative; /* или absolute */
+    background-color: rgb(166, 230, 26); /* Установите цвет фона */
+    color: black; /* Цвет текста, чтобы он был виден */
+    width: 464px;
+    height: 490px;
+    top: 230px; /* Убедитесь, что это значение подходит для вашего макета */
+    margin: 0 auto; /* Центрирование блока */
+    border-radius: 12px;
+}

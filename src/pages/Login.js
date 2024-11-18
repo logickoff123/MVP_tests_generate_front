@@ -1,10 +1,15 @@
 import React from 'react';
+import styles from "./Login.module.css";
+import fon from "../img/fon.png";
+
 
 const Login = () => {
   return (
-    <div>
-      <h1>Страница входа</h1>
-      <p>Здесь будет форма для входа.</p>
+    <div className ={styles.login}>
+      <img src = {fon} alt = 'error' className={styles.fon}/>
+      <div className = {styles.block}>
+        
+      </div>
     </div>
   );
 };
