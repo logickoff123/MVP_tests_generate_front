@@ -1,0 +1,52 @@
+.header{
+    width: 100%; 
+    height: 60px; 
+    background-color: #1C1C1D; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../Roboto/Roboto-Black.ttf') format('truetype');
+    /*src: url('../../Roboto/Roboto-Thin.ttf') format('truetype');*/
+    font-weight: normal;
+    font-style: normal;
+}
+.all_categories{
+    display: flex; 
+    align-items: center; 
+    color:aliceblue;
+    font-family: 'Roboto';
+
+}
+.all_categories p {
+    margin-right: 50px; 
+}
+
+
+registor{
+    border-radius: 12px;
+    background-color: #C1EF00;
+    width: 97px;
+    height: 40px;
+    font-family: 'Roboto';
+}
+.Registor {
+    margin-right: 50px; /* Отступ справа для первой кнопки */
+    border-radius: 12px;
+    background-color: #C1EF00;
+    width: 97px;
+    height: 40px;
+    font-family: 'Roboto';
+}
+
+.Vhod{
+    background-color: #C1EF00;
+    width: 97px;
+    height: 40px;
+    border-radius: 12px;
+    font-family: 'Roboto';
+}
