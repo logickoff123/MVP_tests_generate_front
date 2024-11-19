@@ -1,12 +1,20 @@
-import React from 'react';
+import styles from "./Registration.module.css";
+import fon from '../img/fon.png';
 
 const Registration = () => {
   return (
-    <div>
-      <h1>Страница регистрации</h1>
-      <p>Здесь будет форма для регистрации.</p>
-    </div>
-  );
-};
+      <div className={styles.login}>
+        <img src={fon} alt="error" className={styles.fon} />
+        <div className={styles.block}>
+          <p className={styles.vhod}>Вход</p>
+          <div className={styles.block1}>
+            <input type="email" placeholder="Email" className={styles.email} />
+            <input type="text" placeholder="ФИО" className={styles.password} />
+            <button className={styles.knopkavhod}>Войти</button>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
 export default Registration;
