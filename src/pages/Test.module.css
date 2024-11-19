@@ -1,0 +1,26 @@
+.block{
+    background-color: #1C1C1D;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;  
+}
+.block1 {
+    display: flex; /* Добавлено для использования Flexbox */
+    align-items: center; /* Выравнивание по горизонтали */
+    justify-content: center; /* Выравнивание по вертикали */
+}
+.text1{
+    color:white;
+    margin-left: 150px;
+}
+.block2{
+    width: 1260px;
+    height: 356px;
+    background-color: #141415;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
