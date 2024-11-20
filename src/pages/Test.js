@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './Test.module.css'
+import { useNavigate } from 'react-router-dom';
 
 const Test = () => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate('/alltests');
+  };
   return (
     <div className={styles.block}>
       <h1 className={styles.text1}>Создание теста</h1>
@@ -42,7 +47,7 @@ const Test = () => {
               </div>
 
               <div className={styles.save_button_wrapper}>
-                <button className={styles.save}>Сохранить</button>
+                <button className={styles.save} onClick={handleLogin}>Создать тест</button>
               </div>
             </div>
           </div>
