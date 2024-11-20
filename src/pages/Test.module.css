@@ -1,26 +1,92 @@
-.block{
+.block1 {
+    display: flex; /* Flexbox для выравнивания блока */
+    align-items: center;
+    justify-content: center;
     background-color: #1C1C1D;
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
-    left: 0;  
+    left: 0; 
 }
-.block1 {
-    display: flex; /* Добавлено для использования Flexbox */
-    align-items: center; /* Выравнивание по горизонтали */
-    justify-content: center; /* Выравнивание по вертикали */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../Roboto/Roboto-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 .text1{
-    color:white;
-    margin-left: 150px;
+    color: white;
+    font-family: 'Roboto';
 }
-.block2{
+.block2 {
     width: 1260px;
-    height: 356px;
+    height: 350px; /* Увеличиваем высоту для кнопки */
     background-color: #141415;
     border-radius: 24px;
     display: flex;
+    flex-direction: column; /* Элементы располагаются вертикально */
+    justify-content: space-between; /* Кнопка "Сохранить" будет внизу */
     align-items: center;
-    justify-content: center; 
+    padding: 20px; /* Отступы внутри блока */
+}
+
+.block_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Основное содержимое идёт вертикально */
+    align-items: center; /* Центрируем всё внутри */
+    gap: 30px; /* Расстояние между выпадающими списками */
+}
+
+.block_setings {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между выпадающими списками */
+}
+
+.option_block {
+    display: flex;
+    flex-direction: column; /* Располагаем текст и список вертикально */
+    align-items: center; /* Центрируем текст и выпадающий список */
+}
+
+.subject {
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto';
+}
+
+.tema {
+    width: 239px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.save_button_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Центрируем кнопку внизу */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.save {
+    width: 150px;
+    height: 48px;
+    background-color: #1C1C1D;
+    color: white;
+    font-family: 'Roboto';
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.save:hover {
+    background-color:  #C1EF00;
 }
