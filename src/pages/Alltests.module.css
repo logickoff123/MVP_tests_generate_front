@@ -4,7 +4,6 @@
     width: 100%;
     position: absolute;
 }
-
 @font-face {
     font-family: 'Roboto';
     src: url('../Roboto/Roboto-Black.ttf') format('truetype');
@@ -12,7 +11,7 @@
     font-style: normal;
 }
 .nomer_zadaniya{
-    width: 1,260px;
+    width: 1260px;
     height: 428px;
     border-radius: 24px;
     gap: 16px;
@@ -21,8 +20,72 @@
 .text1{
     color:white;
     font-family: 'Roboto', sans-serif;
+    font-size: 29px;
 }
 .text2{
     color:white;
     font-family: 'Roboto', sans-serif;
+    font-size: 29px;
+}
+.task{
+    width: 1210px;
+    height: 150px;
+    background-color: #1C1C1D;
+    border-radius: 12px;
+    font-size: 29px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center;
+}
+.green{
+    background-color: #0A589F;
+    border-radius: 12px;
+    width: 290px;
+    height: 150px;
+    font-size: 24px;
+    color:white;
+}
+
+.orange{
+    background-color: #007C7F;
+    border-radius: 12px;
+    width: 290px;
+    height: 150px;
+    font-size:24px;
+    color:white;
+}
+
+.pink{
+    background-color: #E37009;
+    border-radius: 12px;
+    width: 290px;
+    height: 150px;
+    font-size: 24px;
+    color:white;
+}
+
+.blue{
+    background-color: #E62E69;
+    border-radius: 12px;
+    width: 290px;
+    height: 150px;
+    font-size: 24px;
+    color:white;
+}
+.otvet{
+    display: flex;
+    gap: 16px;
+}
+.all_contanier{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center;
+}
+.text2{
+    display: flex;
+    flex-direction: column; /* Вертикальная ориентация */
+    justify-content: space-between; 
+    align-items: center;
 }
