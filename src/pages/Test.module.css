@@ -1,13 +1,8 @@
 .block1 {
-    display: flex; /* Flexbox для выравнивания блока */
-    align-items: center;
-    justify-content: center;
     background-color: #1C1C1D;
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
-    left: 0; 
 }
 @font-face {
     font-family: 'Roboto';
@@ -24,37 +19,24 @@
     height: 350px; /* Увеличиваем высоту для кнопки */
     background-color: #141415;
     border-radius: 24px;
-    display: flex;
-    flex-direction: column; /* Элементы располагаются вертикально */
-    justify-content: space-between; /* Кнопка "Сохранить" будет внизу */
-    align-items: center;
     padding: 20px; /* Отступы внутри блока */
 }
 
 .block_content {
     width: 100%;
-    display: flex;
-    flex-direction: column; /* Основное содержимое идёт вертикально */
-    align-items: center; /* Центрируем всё внутри */
-    gap: 30px; /* Расстояние между выпадающими списками */
 }
 
 .block_setings {
     display: flex;
-    justify-content: center;
     gap: 20px; /* Расстояние между выпадающими списками */
 }
 
 .option_block {
-    display: flex;
-    flex-direction: column; /* Располагаем текст и список вертикально */
-    align-items: center; /* Центрируем текст и выпадающий список */
 }
 
 .subject {
     font-size: 16px;
     margin-bottom: 8px;
-    text-align: center;
     color: white;
     font-family: 'Roboto';
 }

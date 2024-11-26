@@ -8,9 +8,8 @@ const Test = () => {
     navigate('/alltests');
   };
   return (
-      <div className={styles.block}>
-        <h1 className={styles.text1}>Создание теста</h1>
           <div className={styles.block1}>
+        <h1 className={styles.text1}>Создание теста</h1>
             <div className={styles.block2}>
               <div className={styles.block_content}>
                 <div className={styles.block_setings}>
@@ -52,7 +51,6 @@ const Test = () => {
               </div>
             </div>
           </div>
-        </div>
 
   );
 };
