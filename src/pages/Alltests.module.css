@@ -3,21 +3,26 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
-    left: 0; 
-    display:flex;
-    flex-direction: column; 
-    justify-content: space-between; 
-    align-items: center;
-}
-.task1{
-    width: 1260px;
-    height: 428px;
-    border-radius: 24px;
-    background-color: #141415;
 }
 
-.text_1{
-    border-radius: 12px;
-    color: white;
+@font-face {
+    font-family: 'Roboto';
+    src: url('../Roboto/Roboto-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.nomer_zadaniya{
+    width: 1,260px;
+    height: 428px;
+    border-radius: 24px;
+    gap: 16px;
+    background-color: #141415;
+}
+.text1{
+    color:white;
+    font-family: 'Roboto', sans-serif;
+}
+.text2{
+    color:white;
+    font-family: 'Roboto', sans-serif;
 }

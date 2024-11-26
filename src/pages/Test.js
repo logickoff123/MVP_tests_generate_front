@@ -8,9 +8,8 @@ const Test = () => {
     navigate('/alltests');
   };
   return (
-      <div className={styles.block}>
-        <h1 className={styles.text1}>Создание теста</h1>
           <div className={styles.block1}>
+        <h1 className={styles.text1}>Создание теста</h1>
             <div className={styles.block2}>
               <div className={styles.block_content}>
                 <div className={styles.block_setings}>
@@ -43,16 +42,14 @@ const Test = () => {
                       <option value="english">Вектора</option>
                       <option value="english">Лимиты</option>
                     </select>
+                    <div className={styles.save_button_wrapper}>
+                      <button className={styles.save} onClick={handleLogin}>Создать тест</button>
+                    </div>
                   </div>
-                </div>
-
-                <div className={styles.save_button_wrapper}>
-                  <button className={styles.save} onClick={handleLogin}>Создать тест</button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
   );
 };
