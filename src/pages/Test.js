@@ -42,12 +42,17 @@ const Test = () => {
                       <option value="english">Вектора</option>
                       <option value="english">Лимиты</option>
                     </select>
+                    {/*
                     <div className={styles.save_button_wrapper}>
                       <button className={styles.save} onClick={handleLogin}>Создать тест</button>
                     </div>
+                    */}
                   </div>
                 </div>
               </div>
+            <div className={styles.save_button_wrapper}>
+              <button className={styles.save} onClick={handleLogin}>Создать тест</button>
+            </div>
             </div>
           </div>
 
