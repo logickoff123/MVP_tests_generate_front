@@ -6,43 +6,65 @@ const Alltests = () => {
     questionIndex: 1,
     questionText: 'Задана функция функция функция функция функция функция функция функция y = 5x-8.Найдите ее значения при x = 2',
     answers: [
-      { className: styles.blue, text: '10' },
-      { className: styles.green, text: '12' },
-      { className: styles.orange, text: '20' },
-      { className: styles.pink, text: '56' },
+      { text: '10' },
+      { text: '12' },
+      { text: '20' },
+      { text: '56' },
     ]
   }, {
     questionIndex: 2,
     questionText: '2+2?',
     answers: [
-      { className: styles.blue, text: '5' },
-      { className: styles.green, text: '4' },
-      { className: styles.orange, text: 'NaN' },
-      { className: styles.pink, text: 'RRRRRRRRRR' },
+      { text: '5' },
+      { text: '4' },
+      { text: 'NaN' },
+      { text: 'RRRRRRRRRR' },
     ]
   }, {
     questionIndex: 4,
     questionText: '2+2?',
     answers: [
-      { className: styles.blue, text: '5' },
-      { className: styles.green, text: '4' },
-      { className: styles.orange, text: 'NaN' },
-      { className: styles.pink, text: 'RRRRRRRRRR' },
+      { text: '5' },
+      { text: '4' },
+      { text: 'NaN' },
+      { text: 'RRRRRRRRRR' },
     ]
   }, {
     questionIndex: 5,
     questionText: '2+2?',
     answers: [
-      { className: styles.blue, text: '5' },
-      { className: styles.green, text: '4' },
-      { className: styles.orange, text: 'NaN' },
-      { className: styles.pink, text: 'RRRRRRRRRR' },
+      { text: '5' },
+      { text: '4' },
+      { text: 'NaN' },
+      { text: 'RRRRRRRRRR' },
     ]
   }];
 
+  const colors = [
+    styles.blue,
+    styles.green,
+    styles.orange,
+    styles.pink,
+  ]
+
   return (
     <div className = {styles.main_container}>
-      <ManyQuestionsComponent questions={questions}/>
+      <ManyQuestionsComponent questions={questions.map(({
+        questionIndex,
+        questionText,
+        answers
+      }) => {
+        const shuffledColors = colors
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }, index) => value);
+
+        return ({
+        questionIndex,
+        questionText,
+        answers: answers
+          .map(({ text }, index) => ({text, className: shuffledColors[index]}))
+      })})}/>
     </div>
   );
 };
