@@ -1,21 +1,37 @@
-.main_contanier{
-    background-color: #1C1C1D;
+html, body, div#root {
     height: 100%;
     width: 100%;
-    position: absolute;
 }
+
+.main_container{
+    background-color: #1C1C1D;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+}
+
 @font-face {
     font-family: 'Roboto';
     src: url('../Roboto/Roboto-Black.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
+
 .nomer_zadaniya{
     width: 1260px;
-    height: 428px;
+    /* height: 428px; */
+    padding: 20px;
     border-radius: 24px;
     gap: 16px;
     background-color: #141415;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .text1{
     color:white;
@@ -28,15 +44,17 @@
     font-size: 29px;
 }
 .task{
-    width: 1210px;
+    /* width: 1210px; */
     height: 150px;
     background-color: #1C1C1D;
     border-radius: 12px;
     font-size: 29px;
     display: flex;
-    flex-direction: column; 
-    justify-content: space-between; 
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
+    padding: 20px 200px;
 }
 .green{
     background-color: #0A589F;
@@ -77,15 +95,9 @@
     display: flex;
     gap: 16px;
 }
-.all_contanier{
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between; 
-    align-items: center;
-}
 .text2{
     display: flex;
     flex-direction: column; /* Вертикальная ориентация */
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
