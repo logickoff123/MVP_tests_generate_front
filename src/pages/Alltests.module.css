@@ -6,9 +6,11 @@ html, body, div#root {
 .main_container{
     background-color: #1C1C1D;
     height: 100vh;
+    overflow-y: scroll;
     width: 100%;
     display: grid;
     place-items: center;
+    gap: 20px;
 
 }
 
