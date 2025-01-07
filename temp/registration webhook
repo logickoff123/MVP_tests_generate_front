@@ -1,0 +1,65 @@
+
+import React, { useState } from 'react';
+import styles from "./Registration.module.css";
+import fon from '../img/fon.png';
+import { useNavigate } from 'react-router-dom';
+
+const Registration = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleRegister = async () => {
+    try {
+      const response = await fetch('/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: name, email, password }),
+      });
+      if (!response.ok) {
+        throw new Error('Ошибка регистрации');
+      }
+      const data = await response.json();
+      alert(data.message);
+      navigate('/test');
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  return (
+    <div className={styles.login}>
+      <img src={fon} alt="error" className={styles.fon} />
+      <div className={styles.block}>
+        <p className={styles.vhod}>Регистрация</p>
+        <div className={styles.block1}>
+          <input 
+            type="email" 
+            placeholder="Email" 
+            className={styles.email} 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} 
+          />
+          <input 
+            type="text" 
+            placeholder="ФИО" 
+            className={styles.password} 
+            value={name}
+            onChange={(e) => setName(e.target.value)} 
+          />
+          <input 
+            type="password" 
+            placeholder="Пароль" 
+            className={styles.password} 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} 
+          />
+          <button className={styles.knopkavhod} onClick={handleRegister}>Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  );
+};
