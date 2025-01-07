@@ -11,34 +11,7 @@ const Alltests = () => {
       { text: '20' },
       { text: '56' },
     ]
-  }, {
-    questionIndex: 2,
-    questionText: '2+2?',
-    answers: [
-      { text: '5' },
-      { text: '4' },
-      { text: 'NaN' },
-      { text: 'RRRRRRRRRR' },
-    ]
-  }, {
-    questionIndex: 4,
-    questionText: '2+2?',
-    answers: [
-      { text: '5' },
-      { text: '4' },
-      { text: 'NaN' },
-      { text: 'RRRRRRRRRR' },
-    ]
-  }, {
-    questionIndex: 5,
-    questionText: '2+2?',
-    answers: [
-      { text: '5' },
-      { text: '4' },
-      { text: 'NaN' },
-      { text: 'RRRRRRRRRR' },
-    ]
-  }];
+  },];
 
   const colors = [
     styles.blue,
