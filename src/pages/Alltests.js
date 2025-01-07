@@ -2,6 +2,34 @@ import React from 'react';
 import styles from "./Alltests.module.css" ;
 
 const Alltests = () => {
+  var question;
+  var answer;
+// foo
+  fetch('http://127.0.0.1:8000/generate_question', {
+    method: "POST",
+    headers: {
+	'Content-Type': 'application/json',
+},
+    body: JSON.stringify({
+	"topic": "math",
+	"difficulty": "easy",
+	"amount": 10
+    })
+  }
+)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    console.log(response);
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data["question"])
+  })
+  .catch((error) => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });
   const questions = [{
     questionIndex: 1,
     questionText: 'Задана функция функция функция функция функция функция функция функция y = 5x-8.Найдите ее значения при x = 2',
