@@ -1,10 +1,21 @@
 import { useQuery } from '@tanstack/react-query';
 
-export const useProductsQuery = () => {
+export const useQuestionQuery = () => {
     return useQuery({
         queryKey: ['generate_question'],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:8000/generate_question`);
+            const response = await fetch('http://127.0.0.1:8000/generate_question', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    "topic": "math",
+                    "difficulty": "easy",
+                    "amount": 10
+                })
+            }
+            );
             return await response.json();
         }
     });
