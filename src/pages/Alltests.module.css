@@ -1,6 +1,7 @@
 html, body, div#root {
     height: 100%;
     width: 100%;
+    background-color: #1C1C1D;
 }
 
 .main_container{
@@ -102,4 +103,18 @@ html, body, div#root {
     flex-direction: column; /* Вертикальная ориентация */
     justify-content: space-between;
     align-items: center;
+}
+
+.radio {
+    width: 30px; /* Ширина радио-кнопки */
+    height: 30px; /* Высота радио-кнопки */
+    accent-color: white; /* Цвет радио-кнопки */
+    margin-right: 10px; /* Отступ справа от радио-кнопки */
+}
+
+.label {
+    color: white; /* Цвет текста метки */
+    font-size: 18px; /* Размер шрифта метки */
+    margin-bottom: 10px; /* Отступ снизу для меток */
+    cursor: pointer; /* Курсор при наведении на метку */
 }
