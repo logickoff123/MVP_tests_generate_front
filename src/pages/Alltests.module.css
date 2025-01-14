@@ -118,3 +118,13 @@ html, body, div#root {
     margin-bottom: 10px; /* Отступ снизу для меток */
     cursor: pointer; /* Курсор при наведении на метку */
 }
+
+.button1 {
+    width: 384px; 
+    height: 48px;
+    background-color: #C1EF00;
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    
+}

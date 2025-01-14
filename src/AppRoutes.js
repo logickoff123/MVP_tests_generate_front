@@ -5,6 +5,7 @@ import Registration from './pages/Registration';
 import Login from './pages/Login';
 import Test from './pages/Test'; 
 import Alltests from './pages/Alltests';
+import Answer from './pages/Answer';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient({
@@ -23,6 +24,7 @@ const AppRoutes = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/test" element={<Test />} /> {/* Новый маршрут */}
           <Route path="/alltests" element={<Alltests />} /> 
+          <Route path="/answer" element={<Answer />} /> 
         </Routes>
       </Router>
     </QueryClientProvider>
