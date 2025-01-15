@@ -73,3 +73,19 @@ export const useCategoriesQuery = () => {
     });
 }
 */
+
+export const useAllAnswersQuery = () => {
+    return useQuery({
+        queryKey: ['my_answers'],
+        queryFn: async () => {
+            const response = await fetch('http://127.0.0.1:8000/my_answers', {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+            );
+            return await response.json();
+        }
+    });
+}

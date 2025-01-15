@@ -1,6 +1,7 @@
 import styles from "./Alltests.module.css";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useQuestionQuery} from '../hooks/hooks'
 
 const Alltests = () => {
   const questions = [
@@ -106,6 +107,13 @@ const Alltests = () => {
     },
   ];
 
+  var data_raw = useQuestionQuery();
+  if (data_raw["isSuccess"]) {
+    for (var i = 0; i < 10; i++) {
+      questions[i].questionText = data_raw.data?.batch[i]["question"]
+      questions[i].answers[0].text = data_raw.data?.batch[i]["answer"]
+    }
+  }
   const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
   const navigate = useNavigate();
 
