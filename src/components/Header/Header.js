@@ -18,7 +18,9 @@ const Header = () => {
             <p>О нас</p>
         </div>
         <div className={styles.registor}>
-          <button className={styles.Registor} onClick={() => navigate('/registration')}>Регистрация</button>
+          {//<button className={styles.Registor} onClick={() => navigate('/registration')}>Регистрация</button>
+          }
+
           <button className={styles.Vhod} onClick={() => navigate('/login')}>Войти</button>
         </div>
       </header>

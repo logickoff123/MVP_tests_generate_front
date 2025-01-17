@@ -17,7 +17,10 @@ function LoginButton() {
     
   };
   return !isAuthenticated && (
-    <button onClick={loginWithRedirect}>Log in</button>
+    
+    <div className = {styles.contanier}>
+      <button className = {styles.logreg} onClick={loginWithRedirect}>Регистрация/Авторизация</button>
+    </div>
   );
 }
 
