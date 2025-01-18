@@ -10,11 +10,19 @@ const Posts = () => {
       try {
         const token = await getAccessTokenSilently({
           authorizationParams: {
-            audience: 'http://localhost:8000', // Value in Identifier field for the API being called.
+            audience: 'http://localhost/', // Value in Identifier field for the API being called.
             scope: 'read:posts', // Scope that exists for the API being called. You can create these through the Auth0 Management API or through the Auth0 Dashboard in the Permissions view of your API.
           }
         });
-        const response = await fetch('localhost:8000/login', {
+        // await (async () => {
+        //   const response = await fetch('http://localhost:8000/users/me', {
+        //     headers: {
+        //       Authorization: `Bearer ${token}`,
+        //     },
+        //   });
+        //   return await response.json();
+        // })()
+        const response = await fetch('http://localhost:8000/users/me', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

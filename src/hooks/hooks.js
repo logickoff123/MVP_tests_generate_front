@@ -1,3 +1,4 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import { useQuery } from '@tanstack/react-query';
 
 export const useQuestionQuery = () => {
@@ -14,6 +15,34 @@ export const useQuestionQuery = () => {
                     "difficulty": "easy",
                     "amount": 10
                 })
+            }
+            );
+            return await response.json();
+        }
+    });
+}
+
+export const useMeUserQuery = () => {
+    const { getAccessTokenSilently } = useAuth0();
+    return useQuery({
+        queryKey: ['user/me'],
+        queryFn: async () => {
+            const accessToken = await getAccessTokenSilently({
+                authorizationParams: {
+                    scope: "read:current_user",
+                },
+            });
+            const response = await fetch('http://127.0.0.1:8000/users/me', {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${accessToken}`
+                },
+                // body: JSON.stringify({
+                //     "topic": "math",
+                //     "difficulty": "easy",
+                //     "amount": 10
+                // })
             }
             );
             return await response.json();
