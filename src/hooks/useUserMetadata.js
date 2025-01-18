@@ -3,7 +3,6 @@ import { useQuery } from '@tanstack/react-query';
 
 export function useUserMetadata() {
   const { getAccessTokenSilently, user } = useAuth0();
-  console.log(`useUserMetadata user `, user);
   const domain = "dev-qyax2072h48uwzrg.us.auth0.com";
 
   return useQuery({
@@ -24,7 +23,6 @@ export function useUserMetadata() {
       });
 
       const fullUser = await metadataResponse.json();
-      console.log(fullUser);
       if (fullUser.error) throw new Error(fullUser.error)
       return fullUser;
     }
