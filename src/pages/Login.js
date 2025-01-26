@@ -1,36 +1,28 @@
 import styles from "./Login.module.css";
 import fon from "../img/fon.png";
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import { useUserMetadata } from '../hooks/useUserMetadata';
 
 
 
 function LoginButton() {
-  const hook_return_data = useAuth0();
   const {
     isAuthenticated,
     loginWithRedirect,
-  } = hook_return_data;
-  const { data: user, isSuccess } = useUserMetadata();
-  console.log('LoginButton ~ hook_return_data:', hook_return_data);
-  // const navigate = useNavigate();
-  // const handleLogin = () => {
-  //   navigate('/test');
-  // };
-  console.log('LoginButton ~ user:', user);
-  return isAuthenticated
-    ? <span style={{ color: 'white' }}>Вы авторизованы как {isSuccess ? user.email : 'Загрузка...'}</span>
-    : (
-      <div className={styles.contanier}>
-        <button className={styles.logreg} onClick={loginWithRedirect}>Регистрация/Авторизация</button>
-      </div>
-    );
+  } = useAuth0();
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    navigate('/test');
+    
+  };
+  return isAuthenticated ? <Navigate to="/test" replace={true} /> : (
+    
+    <div className = {styles.contanier}>
+      <button className = {styles.logreg} onClick={loginWithRedirect}>Регистрация/Авторизация</button>
+    </div>
+  );
 }
-
-
-
 
 export default LoginButton;
 
