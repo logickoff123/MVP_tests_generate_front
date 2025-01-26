@@ -21,7 +21,7 @@ const AppRoutes = () => {
     domain="dev-qyax2072h48uwzrg.us.auth0.com"
     clientId="F06ZhbTnZudMkoDVw80SChCXYvbqgBc3"
     authorizationParams={{
-      redirect_uri: window.location.origin //"http://localhost:8000/login"
+      redirect_uri: window.location.origin + "/test" //"http://localhost:8000/login"
     }}
 >
     <QueryClientProvider client={queryClient}>

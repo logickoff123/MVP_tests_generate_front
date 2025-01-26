@@ -1,7 +1,7 @@
 import styles from "./Login.module.css";
 import fon from "../img/fon.png";
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 
@@ -16,7 +16,7 @@ function LoginButton() {
     navigate('/test');
     
   };
-  return !isAuthenticated && (
+  return isAuthenticated ? <Navigate to="/test" replace={true} /> : (
     
     <div className = {styles.contanier}>
       <button className = {styles.logreg} onClick={loginWithRedirect}>Регистрация/Авторизация</button>
