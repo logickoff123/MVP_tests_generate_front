@@ -18,8 +18,6 @@ const Test = () => {
                     <select className={styles.tema} id="dropdown" name="category">
                       <option value="" disabled selected>Выберите категорию</option>
                       <option value="math">Математика</option>
-                      <option value="history">История</option>
-                      <option value="english">Английский</option>
                     </select>
                   </div>
 
@@ -27,9 +25,9 @@ const Test = () => {
                     <p className={styles.subject}>Уровень</p>
                     <select className={styles.tema} id="dropdown" name="category">
                       <option value="" disabled selected>Выберите уровень</option>
-                      <option value="math">1 курс</option>
-                      <option value="history">11 класс</option>
-                      <option value="english">10 класс</option>
+                      <option value="easy">Легкий</option>
+                      <option value="normal">Средний</option>
+                      <option value="hard">Сложный</option>
                     </select>
                   </div>
 
