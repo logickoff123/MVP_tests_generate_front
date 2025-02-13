@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Test = () => {
   const navigate = useNavigate();
   const handleLogin = () => {
-    navigate('/alltests');
+    navigate('/alltests'); // TODO: transfer topic value to /alltests
   };
   return (
           <div className={styles.block1}>
@@ -37,10 +37,11 @@ const Test = () => {
                     <p className={styles.subject}>Темы</p>
                     <select className={styles.tema} id="dropdown" name="category">
                       <option value="" disabled selected>Выберите тему</option>
-                      <option value="math">Матрицы</option>
-                      <option value="history">Производная</option>
-                      <option value="english">Вектора</option>
-                      <option value="english">Лимиты</option>
+                      <option value="matrix">Матрицы</option>
+                      <option value="derivative">Производная</option>
+                      <option value="vector">Вектора</option>
+                      <option value="limit">Лимиты</option>
+                      <option value="integral">Интегралы</option>
                     </select>
                     {/*
                     <div className={styles.save_button_wrapper}>
