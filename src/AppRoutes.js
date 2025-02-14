@@ -8,6 +8,7 @@ import Alltests from './pages/Alltests';
 import Answer from './pages/Answer';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Auth0Provider } from '@auth0/auth0-react';
+import { SnackbarProvider } from 'notistack';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,6 +26,7 @@ const AppRoutes = () => {
     }}
 >
     <QueryClientProvider client={queryClient}>
+    <SnackbarProvider>
       <Router>
         <Routes>
           <Route path="/" element={<App />} />
@@ -35,6 +37,7 @@ const AppRoutes = () => {
           <Route path="/answer" element={<Answer />} /> 
         </Routes>
       </Router>
+      </SnackbarProvider>
     </QueryClientProvider>
     </Auth0Provider>
   );

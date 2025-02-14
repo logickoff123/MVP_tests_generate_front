@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-export const useQuestionQuery = () => {
+export const useQuestionQuery = (
+    {subject,level,topic}
+) => {
     return useQuery({
         queryKey: ['generate_question'],
         queryFn: async () => {
@@ -10,8 +12,9 @@ export const useQuestionQuery = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    "topic": "math",
-                    "difficulty": "easy",
+                    "subject": subject,
+                    "topic": topic,
+                    "level": level,
                     "amount": 10
                 })
             }
