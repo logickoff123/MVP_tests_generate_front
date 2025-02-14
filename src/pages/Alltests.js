@@ -106,8 +106,15 @@ const Alltests = () => {
       ]
     },
   ];
+  const urlParams = new URLSearchParams(window.location.search);
+  const  subject = urlParams.get('subject');
+  const   level= urlParams.get('level')
+  const  topic = urlParams.get('topic')
+  console.log(subject,level,topic)
+  var data_raw = useQuestionQuery(
+  {subject,level,topic}
+  );
 
-  var data_raw = useQuestionQuery();
   if (data_raw["isSuccess"]) {
     for (var i = 0; i < 10; i++) {
       questions[i].questionText = data_raw.data?.batch[i]["question"]
@@ -122,6 +129,7 @@ const Alltests = () => {
     newSelectedAnswers[questionIndex - 1] = answerIndex; // Save the selected answer
     setSelectedAnswers(newSelectedAnswers);
   };
+
 
   const handleAnswer = () => {
     navigate('/answer');
