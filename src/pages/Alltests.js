@@ -2,6 +2,8 @@ import styles from "./Alltests.module.css";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useQuestionQuery} from '../hooks/hooks'
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
 
 const Alltests = () => {
   const questions = [
@@ -9,30 +11,30 @@ const Alltests = () => {
       questionIndex: 1,
       questionText: 'Задана функция функция функция функция функция функция функция функция y = 5x-8.Найдите ее значения при x = 2',
       answers: [
-        { text: '10' },
-        { text: '12' },
-        { text: '20' },
-        { text: '56' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
       questionIndex: 2,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
       questionIndex: 3,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
@@ -49,60 +51,60 @@ const Alltests = () => {
       questionIndex: 5,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
       questionIndex: 6,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
       questionIndex: 7,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
       questionIndex: 8,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
       questionIndex: 9,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
     {
       questionIndex: 10,
       questionText: '2+2?',
       answers: [
-        { text: '5' },
-        { text: '4' },
-        { text: 'NaN' },
-        { text: 'RRRRRRRRRR' },
+        { text: '\\( 10 \\)' },
+        { text: '\\( 12 \\)' },
+        { text: '\\( 20 \\)' },
+        { text: '\\( 56 \\)' },
       ]
     },
   ];
@@ -151,34 +153,54 @@ const Alltests = () => {
   );
 };
 
-const QuestionComponent = ({ questionIndex, questionText, answers, selectedAnswer, onAnswerChange }) => (
-  <div className={styles.main_container}>
-    <div className={styles.all_container}>
-      <div className={styles.nomer_zadaniya}>
-        <p className={styles.text1}> Задание №{questionIndex} </p>
-        <div className={styles.task}>
-          <p className={styles.text2}>{questionText}</p>
-        </div>
-        <div className={styles.otvet}>
-          {answers.map((answer, index) => (
-            <div key={index}>
-              <input
-                id={`radio-${questionIndex}-${index}`} // Use template literals correctly
-                type="radio"
-                name={`radio-${questionIndex}`} // Use template literals correctly
-                value={index}
-                checked={selectedAnswer === index}
-                onChange={() => onAnswerChange(questionIndex, index)} // Update answer on change
-                className={styles.radio}
-              />
-              <label className={styles.label} htmlFor={`radio-${questionIndex}-${index}`}>{answer.text}</label>
-            </div>
-          ))}
+const QuestionComponent = ({ questionIndex, questionText, answers, selectedAnswer, onAnswerChange }) => {
+  // Функция для проверки, содержит ли текст LaTeX выражения
+  const containsLatex = (text) => {
+    return text.includes('\\(') || text.includes('\\[');
+  };
+
+  // Функция для рендеринга текста с поддержкой LaTeX
+  const renderTextWithLatex = (text) => {
+    if (containsLatex(text)) {
+      // Если текст содержит LaTeX, используем InlineMath или BlockMath
+      return <InlineMath>{text}</InlineMath>;
+    } else {
+      // Иначе возвращаем обычный текст
+      return text;
+    }
+  };
+
+  return (
+    <div className={styles.main_container}>
+      <div className={styles.all_container}>
+        <div className={styles.nomer_zadaniya}>
+          <p className={styles.text1}> Задание №{questionIndex} </p>
+          <div className={styles.task}>
+            <p className={styles.text2}>{renderTextWithLatex(questionText)}</p>
+          </div>
+          <div className={styles.otvet}>
+            {answers.map((answer, index) => (
+              <div key={index}>
+                <input
+                  id={`radio-${questionIndex}-${index}`}
+                  type="radio"
+                  name={`radio-${questionIndex}`}
+                  value={index}
+                  checked={selectedAnswer === index}
+                  onChange={() => onAnswerChange(questionIndex, index)}
+                  className={styles.radio}
+                />
+                <label className={styles.label} htmlFor={`radio-${questionIndex}-${index}`}>
+                  {renderTextWithLatex(answer.text)}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const ManyQuestionsComponent = ({ questions, onAnswerChange }) => (
   <>

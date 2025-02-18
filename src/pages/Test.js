@@ -43,7 +43,7 @@ const Test = () => {
                     <select className={styles.tema} id="level" name="level">
                       <option value="" disabled selected>Выберите уровень</option>
                       <option value="easy">легкий</option>
-                      <option value="normal">средний</option>
+                      <option value="norm">средний</option>
                       <option value="hard">сложный</option>
                     </select>
                   </div>
